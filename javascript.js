@@ -1,5 +1,8 @@
 // Begin the game, the game will have 5 rounds	(game)
 function game() {
+    // Generate point
+    let playerPoint = 0;
+    let computerPoint = 0;
     // Begin each round	(playRound)
     // Generate computer's choice
     const computerSelection = getComputerChoice();
@@ -7,11 +10,21 @@ function game() {
     const playerSelection = getPlayerChoice();
     // Get result
     const roundResult = playRound(playerSelection, computerSelection);
+    console.log(roundResult);
+    // If the user wins, give the user 1 point and declare the user win
+    if (roundResult.search(/win/i) != -1) {
+        playerPoint += 1;
+    }
+    // If computer wins, give the computer 1 point and declare the user loose
+    else if (roundResult.search(/lose/i) != -1) {
+        computerPoint += 1;
+    }
+    // If tie, no point given
+    // Show the score board to the user
+    const scoreBoard = `User ${playerPoint} : ${computerPoint} Computer`;
+    console.log(scoreBoard);
 }
 
-// If the user wins, give the user 1 point and declare the user win
-// If computer wins, give the computer 1 point and declare the user loose
-// Show the score board to the user
 // Move to next round if it hasn't reached 5 rounds
 // Finish the game and announce the winner
 
@@ -21,7 +34,7 @@ function getComputerChoice() {
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     return computerChoice;
 }
-game()
+
 // Ask the user to choose a choice
 function getPlayerChoice() {
     let playerChoice = prompt("What's your choice (rock - paper - scissors)");
