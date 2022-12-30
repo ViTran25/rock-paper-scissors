@@ -21,11 +21,14 @@ function getComputerChoice() {
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     return computerChoice;
 }
-
+game()
 // Ask the user to choose a choice
 function getPlayerChoice() {
-    const playerChoice = prompt("What's your choice");
-    return playerChoice.toLowerCase(playerChoice);
+    let playerChoice = prompt("What's your choice (rock - paper - scissors)");
+    while (playerChoice.toLowerCase() != 'rock' && playerChoice.toLowerCase() != 'paper' && playerChoice.toLowerCase() != 'scissors') {
+        playerChoice = prompt("Invalid input! \nEnter your choice again (rock - paper - scissors)");
+    }
+    return playerChoice.toLowerCase();
 }
 
 //Selections compare function 
