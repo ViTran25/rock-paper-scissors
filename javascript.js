@@ -1,3 +1,5 @@
+// Call the game() function 
+game();
 // Game() function (5 rounds of game)
 function game() {
     // Generate point
