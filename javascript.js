@@ -1,31 +1,32 @@
-// Begin the game, the game will have 5 rounds	(game)
+// Game() function (5 rounds of game)
 function game() {
     // Generate point
     let playerPoint = 0;
     let computerPoint = 0;
-    // Begin each round	(playRound)
-    // Generate computer's choice
-    const computerSelection = getComputerChoice();
-    // Ask the user to choose a choice
-    const playerSelection = getPlayerChoice();
-    // Get result
-    const roundResult = playRound(playerSelection, computerSelection);
-    console.log(roundResult);
-    // If the user wins, give the user 1 point and declare the user win
-    if (roundResult.search(/win/i) != -1) {
-        playerPoint += 1;
+    // Begin the game, the game will have 5 rounds	(game)
+    for (let i = 0; i < 5; i++) {
+        // Begin each round	(playRound)
+        // Generate computer's choice
+        const computerSelection = getComputerChoice();
+        // Ask the user to choose a choice
+        const playerSelection = getPlayerChoice();
+        // Get result
+        const roundResult = playRound(playerSelection, computerSelection);
+        console.log(roundResult);
+        // If the user wins, give the user 1 point and declare the user win
+        if (roundResult.search(/win/i) != -1) {
+            playerPoint += 1;
+        }
+        // If computer wins, give the computer 1 point and declare the user loose
+        else if (roundResult.search(/lose/i) != -1) {
+            computerPoint += 1;
+        }
+        // If tie, no point given
+        // Show the score board to the user
+        const scoreBoard = `User ${playerPoint} : ${computerPoint} Computer`;
+        console.log(scoreBoard);
     }
-    // If computer wins, give the computer 1 point and declare the user loose
-    else if (roundResult.search(/lose/i) != -1) {
-        computerPoint += 1;
-    }
-    // If tie, no point given
-    // Show the score board to the user
-    const scoreBoard = `User ${playerPoint} : ${computerPoint} Computer`;
-    console.log(scoreBoard);
 }
-
-// Move to next round if it hasn't reached 5 rounds
 // Finish the game and announce the winner
 
 // Generate computer's choice
