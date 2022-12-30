@@ -8,6 +8,11 @@ function getComputerChoice() {
 }
 
 // Ask the user to choose a choice
+function getPlayerChoice() {
+    const playerChoice = prompt("What's your choice");
+    return playerChoice.toLowerCase(playerChoice);
+}
+
 // Compare user's choice with computer's choice
 // If the user wins, give the user 1 point and declare the user win
 // If computer wins, give the computer 1 point and declare the user loose
