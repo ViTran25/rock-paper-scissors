@@ -51,3 +51,18 @@ function compareSelections(player1, player2) {
     }
     return result;
 }
+
+//Single round function
+function playRound(playerSelection, computerSelection) {
+    let result = '';
+    // Compare user's choice with computer's choice
+    if (playerSelection === computerSelection) {
+        result = `Tie! Both are ${playerSelection}`;
+    }
+    else if (compareSelections(playerSelection, computerSelection) === 'win') {
+        result = `You win! ${playerSelection} beats ${computerSelection}`;
+    } else {
+        result = `You lose! ${computerSelection} beats ${playerSelection}`;
+    }
+    return result;
+}
