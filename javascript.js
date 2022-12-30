@@ -26,8 +26,17 @@ function game() {
         const scoreBoard = `User ${playerPoint} : ${computerPoint} Computer`;
         console.log(scoreBoard);
     }
+    // Finish the game and announce the winner
+    if (playerPoint > computerPoint) {
+        console.log("Yay! You win the game ^_^")
+    }
+    else if (playerPoint < computerPoint) {
+        console.log("Noo! You lose the game :'(")
+    }
+    else {
+        console.log("It's a tie. That was a good game. Let's play again ^^");
+    }
 }
-// Finish the game and announce the winner
 
 // Generate computer's choice
 function getComputerChoice() {
