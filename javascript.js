@@ -5,23 +5,24 @@ function game() {
     // Generate point
     let playerPoint = 0;
     let computerPoint = 0;
-    // Begin each round	(playRound)
-    // Generate computer's choice
-    const computerSelection = getComputerChoice();
-    // Ask the user to choose a choice
-    const playerSelection = getPlayerChoice();
-    // Get result
-    const roundResult = playRound(playerSelection, computerSelection);
-    console.log(roundResult);
-    // If the user wins, give the user 1 point and declare the user win
-    if (roundResult.search(/win/i) != -1) {
-        playerPoint += 1;
-    }
-    // If computer wins, give the computer 1 point and declare the user loose
-    else if (roundResult.search(/lose/i) != -1) {
-        computerPoint += 1;
-    }
-    // If tie, no point given
+    // Buttons' event when click
+    const buttons = document.querySelectorAll('.selection-button');
+    buttons.forEach(button => button.addEventListener('click', function(e) {
+        // Generate computer's choice
+        const computerSelection = getComputerChoice();
+        // Get result
+        const roundResult = playRound(button.id, computerSelection);
+        console.log(roundResult);
+        // Point giving
+        if (roundResult.search(/win/i) != -1) {
+            playerPoint += 1;
+        }
+        else if (roundResult.search(/lose/i) != -1) {
+            computerPoint += 1;
+        }
+    }))
+    
+
     // Show the score board to the user
     const scoreBoard = `User ${playerPoint} : ${computerPoint} Computer`;
     console.log(scoreBoard);
