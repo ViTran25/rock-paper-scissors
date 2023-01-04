@@ -1,43 +1,30 @@
 // Call the game() function 
 game();
-// Game() function (5 rounds of game)
+// Game() function (play till one gets 5 points)
 function game() {
     // Generate point
     let playerPoint = 0;
     let computerPoint = 0;
-    // Begin the game, the game will have 5 rounds	(game)
-    for (let i = 0; i < 5; i++) {
-        // Begin each round	(playRound)
-        // Generate computer's choice
-        const computerSelection = getComputerChoice();
-        // Ask the user to choose a choice
-        const playerSelection = getPlayerChoice();
-        // Get result
-        const roundResult = playRound(playerSelection, computerSelection);
-        console.log(roundResult);
-        // If the user wins, give the user 1 point and declare the user win
-        if (roundResult.search(/win/i) != -1) {
-            playerPoint += 1;
-        }
-        // If computer wins, give the computer 1 point and declare the user loose
-        else if (roundResult.search(/lose/i) != -1) {
-            computerPoint += 1;
-        }
-        // If tie, no point given
-        // Show the score board to the user
-        const scoreBoard = `User ${playerPoint} : ${computerPoint} Computer`;
-        console.log(scoreBoard);
+    // Begin each round	(playRound)
+    // Generate computer's choice
+    const computerSelection = getComputerChoice();
+    // Ask the user to choose a choice
+    const playerSelection = getPlayerChoice();
+    // Get result
+    const roundResult = playRound(playerSelection, computerSelection);
+    console.log(roundResult);
+    // If the user wins, give the user 1 point and declare the user win
+    if (roundResult.search(/win/i) != -1) {
+        playerPoint += 1;
     }
-    // Finish the game and announce the winner
-    if (playerPoint > computerPoint) {
-        console.log("Yay! You win the game ^_^")
+    // If computer wins, give the computer 1 point and declare the user loose
+    else if (roundResult.search(/lose/i) != -1) {
+        computerPoint += 1;
     }
-    else if (playerPoint < computerPoint) {
-        console.log("Noo! You lose the game :'(")
-    }
-    else {
-        console.log("It's a tie. That was a good game. Let's play again ^^");
-    }
+    // If tie, no point given
+    // Show the score board to the user
+    const scoreBoard = `User ${playerPoint} : ${computerPoint} Computer`;
+    console.log(scoreBoard);
 }
 
 // Generate computer's choice
