@@ -1,5 +1,6 @@
 const roundResult = document.querySelector('.round-result');
 const scoreBoard = document.querySelector('.score-board');
+const winner = document.querySelector('.winner-result');
 // Generate point
 let playerPoint = 0;
 let computerPoint = 0;
@@ -7,11 +8,14 @@ let computerPoint = 0;
 scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
 // Buttons' event when click
 const buttons = document.querySelectorAll('.selection-button');
-buttons.forEach(button => button.addEventListener('click', function(e) {
+buttons.forEach(button => button.addEventListener('click', playGame))
+
+// Play game function
+function playGame(e) {
     // Generate computer's choice
     const computerSelection = getComputerChoice();
     // Get result
-        const result = playRound(button.id, computerSelection);
+        const result = playRound(e.target.id, computerSelection);
         roundResult.textContent = result;
     // Point giving
     if (result.search(/win/i) != -1) {
@@ -22,8 +26,7 @@ buttons.forEach(button => button.addEventListener('click', function(e) {
     }
     // Change the score board result
     scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
-}))
-
+}
 
 // Generate computer's choice
 function getComputerChoice() {
