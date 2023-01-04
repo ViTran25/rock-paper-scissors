@@ -1,33 +1,29 @@
 const roundResult = document.querySelector('.round-result');
 const scoreBoard = document.querySelector('.score-board');
-
-// Call the game() function 
-game();
-// Game() function (play till one gets 5 points)
-function game() {
-    // Generate point
-    let playerPoint = 0;
-    let computerPoint = 0;
-    // Buttons' event when click
-    const buttons = document.querySelectorAll('.selection-button');
-    buttons.forEach(button => button.addEventListener('click', function(e) {
-        // Generate computer's choice
-        const computerSelection = getComputerChoice();
-        // Get result
-         const result = playRound(button.id, computerSelection);
-         roundResult.textContent = result;
-        // Point giving
-        if (result.search(/win/i) != -1) {
-            playerPoint += 1;
-        }
-        else if (result.search(/lose/i) != -1) {
-            computerPoint += 1;
-        }
-        scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
-    }))
-    // Show the score board to the user
+// Generate point
+let playerPoint = 0;
+let computerPoint = 0;
+// Show the score board to the user
+scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
+// Buttons' event when click
+const buttons = document.querySelectorAll('.selection-button');
+buttons.forEach(button => button.addEventListener('click', function(e) {
+    // Generate computer's choice
+    const computerSelection = getComputerChoice();
+    // Get result
+        const result = playRound(button.id, computerSelection);
+        roundResult.textContent = result;
+    // Point giving
+    if (result.search(/win/i) != -1) {
+        playerPoint += 1;
+    }
+    else if (result.search(/lose/i) != -1) {
+        computerPoint += 1;
+    }
+    // Change the score board result
     scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
-}
+}))
+
 
 // Generate computer's choice
 function getComputerChoice() {
