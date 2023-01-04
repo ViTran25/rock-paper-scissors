@@ -26,6 +26,21 @@ function playGame(e) {
     }
     // Change the score board result
     scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
+    // Check and announce the winner if one gets 5 points
+    checkWinner();
+}
+
+// Check winner function
+function checkWinner() {
+    if (playerPoint === 5) {
+        winner.textContent = 'Yay, you win! Congratulation! :>';
+    }
+    if (computerPoint === 5) {
+        winner.textContent = 'Noo! You lose! Better luck next time ^.^';
+    }
+    if (playerPoint === 5 || computerPoint === 5) {
+        buttons.forEach(button => button.removeEventListener('click', playGame));
+    };
 }
 
 // Generate computer's choice
