@@ -1,4 +1,6 @@
 const roundResult = document.querySelector('.round-result');
+const scoreBoard = document.querySelector('.score-board');
+
 // Call the game() function 
 game();
 // Game() function (play till one gets 5 points)
@@ -21,10 +23,10 @@ function game() {
         else if (result.search(/lose/i) != -1) {
             computerPoint += 1;
         }
+        scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
     }))
     // Show the score board to the user
-    const scoreBoard = `User ${playerPoint} : ${computerPoint} Computer`;
-    console.log(scoreBoard);
+    scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
 }
 
 // Generate computer's choice
