@@ -1,3 +1,4 @@
+const roundResult = document.querySelector('.round-result');
 // Call the game() function 
 game();
 // Game() function (play till one gets 5 points)
@@ -11,18 +12,16 @@ function game() {
         // Generate computer's choice
         const computerSelection = getComputerChoice();
         // Get result
-        const roundResult = playRound(button.id, computerSelection);
-        console.log(roundResult);
+         const result = playRound(button.id, computerSelection);
+         roundResult.textContent = result;
         // Point giving
-        if (roundResult.search(/win/i) != -1) {
+        if (result.search(/win/i) != -1) {
             playerPoint += 1;
         }
-        else if (roundResult.search(/lose/i) != -1) {
+        else if (result.search(/lose/i) != -1) {
             computerPoint += 1;
         }
     }))
-    
-
     // Show the score board to the user
     const scoreBoard = `User ${playerPoint} : ${computerPoint} Computer`;
     console.log(scoreBoard);
