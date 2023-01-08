@@ -4,17 +4,23 @@
         <meta charset="utf-8">
         <title>Rock Paper Scissors</title>
         <script src="javascript.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
-        <button class="selection-button" id="rock">ROCK</button>
-        <button class="selection-button" id="paper">PAPER</button>
-        <button class="selection-button" id="scissors">SCISSORS</button>
+        <div class="main">
+            <div class="result-container">
+                <div class="score-board"></div>
+                <div class="round-result"></div>
+            </div>
 
-        <div class="result-container">
-            <div class="score-board"></div>
-            <div class="round-result"></div>
-            <div class="winner-result"></div
+            <div class="button-container">
+                <button class="selection-button" id="rock">✊</button>
+                <button class="selection-button" id="paper">🖐️</button>
+                <button class="selection-button" id="scissors">✌️</button>
+            </div>
+            
+            <div class="winner-result"></div>
         </div>
     </body>
 </html>
