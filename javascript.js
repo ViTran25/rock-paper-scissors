@@ -5,7 +5,7 @@ const winner = document.querySelector('.winner-result');
 let playerPoint = 0;
 let computerPoint = 0;
 // Show the score board to the user
-scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
+scoreBoard.textContent = `You ${playerPoint} : ${computerPoint} AI`;
 // Buttons' event when click
 const buttons = document.querySelectorAll('.selection-button');
 buttons.forEach(button => button.addEventListener('click', playGame))
@@ -25,7 +25,7 @@ function playGame(e) {
         computerPoint += 1;
     }
     // Change the score board result
-    scoreBoard.textContent = `User ${playerPoint} : ${computerPoint} Computer`;
+    scoreBoard.textContent = `You ${playerPoint} : ${computerPoint} AI`;
     // Check and announce the winner if one gets 5 points
     checkWinner();
 }
