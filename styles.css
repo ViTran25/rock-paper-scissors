@@ -45,14 +45,17 @@ body {
     border: none;
     border-radius: 10px;
     background-color: #393e46;
+    background-image: linear-gradient(rgb(26, 115, 117), rgb(126, 227, 153));
 }
 
 button:hover {
     background-color: #4a4f57;
+    background-image: linear-gradient(rgb(36, 125, 137), rgb(136, 237, 163));
 }
 
 button:active {
     background-color: #5b5f68;
+    background-image: linear-gradient(rgb(46, 135, 147), rgb(146, 247, 173));
 }
 
 .reset-button {
