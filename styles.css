@@ -3,6 +3,21 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
 }
+/*Header*/
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #02021E;
+    padding: 30px;
+}
+
+.header-text {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: cursive;
+}
 
 /*Result texts*/
 .main {
