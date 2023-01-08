@@ -54,3 +54,13 @@ button:hover {
 button:active {
     background-color: #5b5f68;
 }
+
+.reset-button {
+    width: 140px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-style: italic;
+    background-image: linear-gradient(rgb(26, 115, 117), rgb(126, 227, 153));
+}

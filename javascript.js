@@ -40,6 +40,7 @@ function checkWinner() {
     }
     if (playerPoint === 5 || computerPoint === 5) {
         buttons.forEach(button => button.removeEventListener('click', playGame));
+        createPlayAgainButton();
     };
 }
 
@@ -102,4 +103,27 @@ function playRound(playerSelection, computerSelection) {
         result = `You lose! ${computerSelection} beats ${playerSelection}`;
     }
     return result;
+}
+
+function createPlayAgainButton() {
+    const main = document.querySelector('.main');
+    const playAgain = document.createElement('button');
+    playAgain.classList.add('reset-button');
+    playAgain.textContent = 'PLAY AGAIN';
+    main.appendChild(playAgain);
+    playAgain.addEventListener('click', function(e) {
+        reset();
+        main.removeChild(playAgain);
+    })
+}
+
+function reset() {
+    // Reset points
+    computerPoint = 0;
+    playerPoint = 0;
+    // Reset results
+    winner.textContent = '';
+    scoreBoard.textContent = `You ${playerPoint} : ${computerPoint} AI`;
+    // Enable selection buttons
+    buttons.forEach(button => button.addEventListener('click', playGame));
 }
