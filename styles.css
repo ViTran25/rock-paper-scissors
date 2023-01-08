@@ -3,3 +3,8 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
 }
+
+.main {
+    text-align: center;
+    color: #ddd;
+}
