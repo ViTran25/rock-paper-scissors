@@ -4,6 +4,7 @@ body {
     line-height: 1.6;
 }
 
+/*Result texts*/
 .main {
     text-align: center;
     color: #ddd;
@@ -27,4 +28,29 @@ body {
     font-weight: bold;
     color: #66E398;
     margin-top: 15px;
+}
+
+/*Buttons*/
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.selection-button {
+    width: 160px;
+    height: 160px;
+    font-size: 80px;
+    border: none;
+    border-radius: 10px;
+    background-color: #393e46;
+}
+
+button:hover {
+    background-color: #4a4f57;
+}
+
+button:active {
+    background-color: #5b5f68;
 }
