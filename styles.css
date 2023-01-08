@@ -8,3 +8,23 @@ body {
     text-align: center;
     color: #ddd;
 }
+
+.round-result {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFFDB0;
+}
+
+.score-board {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #FFFDB0;
+}
+
+.winner-result {
+    font-size: 32px;
+    font-weight: bold;
+    color: #66E398;
+    margin-top: 15px;
+}
